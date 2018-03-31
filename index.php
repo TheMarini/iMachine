@@ -99,7 +99,7 @@
                     <input class="col form-control" type="number" placeholder="milisegundos" aria-label="milisegundos" name="search_nome">
                 </div>
                 <div class="form-row container-fluid">
-                    <button type="button" class="col btn btn-lg btn-warning disabled" type="submit">Realizar simulação</button>
+                    <button type="button" class="col btn btn-lg btn-warning disabled" type="submit">Iniciar simulação</button>
                 </div>
             </form>
         </article>
