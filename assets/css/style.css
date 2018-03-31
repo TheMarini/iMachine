@@ -117,12 +117,20 @@ body > nav{
 }
 
 .nav-link{
-    color: white
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px
 }
 
-.nav-link:hover{
+.nav-link:hover, body > nav .active{
     background-color: whitesmoke;
     color: dimgray
+}
+
+body > nav .active{
+    transition: 0.5s;
+    padding-top: 15px;
+    padding-bottom: 15px
 }
 
 /*----------MAIN------------*/
@@ -139,11 +147,11 @@ main{
 }
 
 /*----------INICIO------------*/
-#home > nav > form button {
+.tab-pane > nav > form button {
     background-color: #17a2b8
 }
 
-#home > nav > form {
+.tab-pane > nav > form {
     margin-bottom: 20px
 }
 
