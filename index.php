@@ -55,7 +55,7 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Nome</th>
+                        <th scope="col">Nome da Máquina</th>
                         <th scope="col">Status Atual</th>
                     </tr>
                 </thead>
