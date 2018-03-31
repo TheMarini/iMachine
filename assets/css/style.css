@@ -146,7 +146,7 @@ main{
     width: 100%;
 }
 
-/*----------INICIO------------*/
+/*----------TABS------------*/
 .tab-pane > nav > form button {
     background-color: #17a2b8
 }
@@ -155,6 +155,7 @@ main{
     margin-bottom: 20px
 }
 
+/*----------HEADER------------*/
 .controls button{
     margin: 0 5px;
     border-radius: 100%;
@@ -180,4 +181,3 @@ main{
 .controls button:nth-child(3):hover{
     background-color: indianred !important;
 }
-

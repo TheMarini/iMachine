@@ -16,8 +16,6 @@
                 </select>
             <?php endif; ?>
         </div>
-        <div class="form-group">
-        </div>
 
         <button class="btn btn-lg my-2 my-sm-0" type="submit">
             <img src="assets/img/search.svg" alt="search">
