@@ -1,3 +1,12 @@
+<?php
+    require 'vendor/autoload.php';
+
+    use Ramsey\Uuid\Uuid;
+    use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
+
+    include('database.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -27,81 +36,15 @@
     <main class="tab-content" id="tabContent">
 
         <article class="tab-pane fade show active" id="maquinas" role="tabpanel" aria-labelledby="maquinas-tab">
-            <?php $tab = 0; include('header.php'); ?>
-            <table class="table table-striped">
-                <caption class="justify-content-center">Lista de Máquinas</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nome da Máquina</th>
-                        <th scope="col">Status Atual</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                    </tr>
-                </tbody>
-            </table>
+            <?php include('maquinas.php'); ?>
         </article>
 
         <article class="tab-pane fade" id="status" role="tabpanel" aria-labelledby="status-tab">
-            <?php $tab = 1; include('header.php'); ?>
-            <table class="table table-striped">
-                <caption class="justify-content-center">Lista de Status</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nome do Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                    </tr>
-                </tbody>
-            </table>
+            <?php include('status.php'); ?>
         </article>
 
         <article class="tab-pane fade" id="simulacao" role="tabpanel" aria-labelledby="simulacao-tab">
-            <form>
-                <div class="form-row mb-3 container-fluid input-group input-group-lg d-flex justify-content-between align-items-center">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">Periodicidade</div>
-                    </div>
-                    <input class="col form-control" type="number" placeholder="anos" aria-label="anos" name="search_id">
-                    <input class="col form-control" type="number" placeholder="meses" aria-label="meses" name="search_nome">
-                    <input class="col form-control" type="number" placeholder="dias" aria-label="dias" name="search_nome">
-                    <input class="col form-control" type="number" placeholder="horas" aria-label="horas" name="search_nome">
-                    <input class="col form-control" type="number" placeholder="minutos" aria-label="minutos" name="search_nome">
-                    <input class="col form-control" type="number" placeholder="segundos" aria-label="segundos" name="search_nome">
-                    <input class="col form-control" type="number" placeholder="milisegundos" aria-label="milisegundos" name="search_nome">
-                </div>
-                <div class="form-row container-fluid">
-                    <button type="button" class="col btn btn-lg btn-warning disabled" type="submit">Iniciar simulação</button>
-                </div>
-            </form>
+            <?php include('simulacao.php'); ?>
         </article>
     </main>
 </body>
