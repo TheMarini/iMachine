@@ -1,30 +1,21 @@
-<?php $tab = 0; include('header.php'); ?>
+<?php
+    $tab = 0;
 
+    $result = $MySQL->query("SELECT * FROM maquina");
+    $empty = (!$result->num_rows > 0) ? true : false;
 
-<table class="table table-striped">
-    <caption class="justify-content-center">Lista de Máquinas</caption>
-    <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nome nda Máquina</th>
-            <th scope="col">Status Atual</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-        </tr>
-    </tbody>
-</table>
+    include('header.php');
+
+    if (!$empty) :
+
+        include('table.php');
+
+    else:
+?>
+
+<h1 class="text-muted">Não há nenhuma máquina cadastrada :(</h1>
+
+<?php
+    endif;
+    include('modal.php');
+?>
