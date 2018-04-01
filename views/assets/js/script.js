@@ -38,6 +38,7 @@ $(function () {
         //Prevent Default
         event.preventDefault();
 
+        //Current tab
         $tab = $('nav .active').index();
 
         if ($tab == 0) {
@@ -47,20 +48,22 @@ $(function () {
                 ID: $('#search_id').val(),
                 Nome: $('#search_nome').val(),
                 Status: $status,
-                tab: $tab
+                tab: $tab,
+                SQL_type: null
             };
         }
         else{
             $data = {
                 ID: $('#search_id').val(),
                 Nome: $('#search_nome').val(),
-                tab: $tab
+                tab: $tab,
+                SQL_type: null
             };
         }
 
         //AJAX
         $.ajax({
-            url: 'models/search.php',
+            url: 'models/SQL_query.php',
             type: "GET",
             dataType: 'html',
             data: ($data),
@@ -74,14 +77,20 @@ $(function () {
     });
 
 
-    //Mdal
+    //Modal
     $('body').on('click', '.modal .modal-footer button[type="submit"]', function () {
 
         //Prevent Default
         event.preventDefault();
 
+        //Get Modal
         $modal = $(this).parent().parent().parent().parent();
+
+        //Nome field
         $nome = $('#' + $modal.attr('id') + ' .modal-body input[name="nome"]').val();
+
+        //Current tab
+        $tab = $('nav .active').index();
 
         //AJAX
         $.ajax({
@@ -89,7 +98,9 @@ $(function () {
             type: "POST",
             dataType: 'html',
             data: ({
-                Nome: $nome
+                Nome: $nome,
+                SQL_type: $modal.attr('id'),
+                tab: $tab
             }),
             success: function (data) {
                 $('article table').replaceWith(data);

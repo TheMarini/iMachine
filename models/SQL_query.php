@@ -1,13 +1,25 @@
 <?php
-
     require('../SQL.php');
+    require('SQL_filter.php');
 
-    $banana = $MySQL->query("SELECT * FROM maquina");
-    $empty = (!$banana->num_rows > 0) ? 'sim' : 'nao';
+    switch ($_GET['SQL_type']){
+        case null:
+            $result = $MySQL->query('SELECT * FROM ' . $tabela . $where);
 
-    echo $empty;
+            if($result->num_rows > 0) {
+                include('../views/table.php');
+            }
+            break;
+
+        case 'AddModal':
+            break;
+
+        case 'EditModal':
+            break;
+
+        case 'DeleteModal':
+            break;
+    }
 
     $MySQL->close();
 ?>
-
-<h1>ISSO AQUI É SQL_Query</h1>

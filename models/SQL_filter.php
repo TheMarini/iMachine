@@ -1,12 +1,14 @@
 <?php
+    //Get current tab
     $tab = $_GET['tab'];
 
+    //Set table
     $tabela = ($tab == 0) ? 'maquina' : 'status';
 
-    $where = '';
-
+    //Set where
+    $where = ' ';
     if ($_GET['ID'] != '' || $_GET['Nome'] != '' || $_GET['Status'] != ''){
-        $where = 'where 1 = 1';
+        $where .= 'where 1 = 1';
 
         if ($_GET['ID'] != ''){
             $where .= ' AND id = ' . $_GET['ID'];
@@ -18,14 +20,4 @@
             $where .= ' AND id_status = "' . $_GET['Status'] . '"';
         }
     }
-
-    require('../SQL.php');
-
-    $result = $MySQL->query('SELECT * FROM ' . $tabela . ' ' . $where);
-
-    if($result->num_rows > 0) {
-        include('../views/table.php');
-    }
-
-    $MySQL->close();
 ?>
