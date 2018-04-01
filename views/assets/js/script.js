@@ -64,14 +64,11 @@ $(function () {
         //AJAX
         $.ajax({
             url: 'models/SQL_query.php',
-            type: "GET",
+            type: "POST",
             dataType: 'html',
             data: ($data),
             success: function (data) {
                 $('article table').replaceWith(data);
-            },
-            error: function (event) {
-                console.log(event);
             }
         })
     });
@@ -104,9 +101,6 @@ $(function () {
             }),
             success: function (data) {
                 $('article table').replaceWith(data);
-            },
-            error: function (event) {
-                console.log(event);
             }
         })
 

@@ -2,7 +2,9 @@
     require('../SQL.php');
     require('SQL_filter.php');
 
-    switch ($_GET['SQL_type']){
+    echo $_POST['SQL_type'];
+
+    switch ($_POST['SQL_type']){
         case null:
             $result = $MySQL->query('SELECT * FROM ' . $tabela . $where);
 
@@ -11,13 +13,16 @@
             }
             break;
 
-        case 'AddModal':
+        case 'addModal':
+            echo 'adiconar';
             break;
 
-        case 'EditModal':
+        case 'editModal':
+            echo 'editar';
             break;
 
-        case 'DeleteModal':
+        case 'deleteModal':
+            echo 'deletar';
             break;
     }
 
