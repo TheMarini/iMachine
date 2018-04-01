@@ -1,4 +1,5 @@
 <?php $disabled = ($empty) ? 'disabled' : ''; ?>
+
 <nav class="d-flex justify-content-between align-items-center">
     <form class="form-inline">
         <div class="form-group">
@@ -19,24 +20,24 @@
         </div>
 
         <button class="btn btn-lg my-2 my-sm-0" type="submit" <?php echo $disabled ?>>
-            <img src="assets/img/search.svg" alt="search">
+            <img src="/views/assets/img/search.svg" alt="search">
         </button>
     </form>
 
     <form class="controls">
         <a data-toggle="modal" href="add" data-target="#addModal">
-            <button class="add" type="button" data-toggle="tooltip" data-placement="left" title="Adicionar Máquina" >
-                <img src="assets/img/add.svg" alt="adicionar">
+            <button class="add" type="button" data-toggle="tooltip" data-placement="left" title="Adicionar">
+                <img src="/views/assets/img/add.svg" alt="adicionar">
             </button>
         </a>
         <a data-toggle="modal" href="edit" data-target="#editModal">
-            <button class="edit" type="button" data-toggle="tooltip" data-placement="left" title="Editar Máquina">
-                <img src="assets/img/edit.svg" alt="excluir">
+            <button class="edit" type="button" data-toggle="tooltip" data-placement="left" title="Editar">
+                <img src="/views/assets/img/edit.svg" alt="excluir">
             </button>
         </a>
         <a data-toggle="modal" href="delete" data-target="#deleteModal">
-            <button class="delete" type="button" data-toggle="tooltip" data-placement="left" title="Excluir Máquina">
-                <img src="assets/img/delete.svg" alt="excluir">
+            <button class="delete" type="button" data-toggle="tooltip" data-placement="left" title="Excluir">
+                <img src="/views/assets/img/delete.svg" alt="excluir">
             </button>
         </a>
     </form>

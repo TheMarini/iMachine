@@ -119,7 +119,7 @@ body > nav{
 .nav-link{
     color: white;
     padding-top: 15px;
-    padding-bottom: 15px
+    padding-bottom: 15px;
 }
 
 .nav-link:hover, body > nav .active{
@@ -141,17 +141,17 @@ main{
     padding:  20px
 }
 
-.tab-pane{
+article{
     height: 100%;
     width: 100%;
 }
 
 /*----------TABS------------*/
-.tab-pane > nav > form button {
+article > nav > form button {
     background-color: #17a2b8
 }
 
-.tab-pane > nav > form {
+article > nav > form {
     margin-bottom: 20px
 }
 
