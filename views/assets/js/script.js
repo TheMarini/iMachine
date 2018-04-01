@@ -73,7 +73,6 @@ $(function () {
         })
     });
 
-
     //Modal
     $('body').on('click', '.modal .modal-footer button[type="submit"]', function () {
 
@@ -84,7 +83,10 @@ $(function () {
         $modal = $(this).parent().parent().parent().parent();
 
         //Nome field
-        $nome = $('#' + $modal.attr('id') + ' .modal-body input[name="nome"]').val();
+        $nome = $('#' + $modal.attr('id') + ' .modal-body input[type="text"]').val();
+
+        //ID field
+        $id = $('#' + $modal.attr('id') + ' .modal-body input[type="number"]').val();
 
         //Current tab
         $tab = $('nav .active').index();
@@ -95,6 +97,7 @@ $(function () {
             type: "POST",
             dataType: 'html',
             data: ({
+                ID: $id,
                 Nome: $nome,
                 SQL_type: $modal.attr('id'),
                 tab: $tab
@@ -106,6 +109,9 @@ $(function () {
 
         //Close Modal
         $($modal).modal('hide');
+
+        //Show Success
+        $('#successAlert').toggleClass('show'); //FIXME: works x1 only
     });
 
     //Auto Load Maquinas
