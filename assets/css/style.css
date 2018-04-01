@@ -8,7 +8,7 @@
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
     color: inherit
 }
 
@@ -167,17 +167,34 @@ main{
     height: 30px
 }
 
-.controls button:nth-child(1){
+.controls .add{
     background-color: lightseagreen!important;
 }
 
-.controls button:nth-child(2){
+.controls .edit{
     background-color: darkorange !important;
 }
 
-.controls button:nth-child(3){
+.controls .delete{
     background-color: dimgray !important;
 }
-.controls button:nth-child(3):hover{
+.controls .delete:hover{
+    background-color: indianred !important;
+}
+
+/*----------MODALS------------*/
+.modal-header{
+    color: white
+}
+
+#addModal .modal-header{
+    background-color: lightseagreen !important;
+}
+
+#editModal .modal-header{
+    background-color: darkorange !important;
+}
+
+#deleteModal .modal-header{
     background-color: indianred !important;
 }
