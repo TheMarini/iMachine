@@ -1,6 +1,8 @@
 <?php
     $tab = 0;
 
+    require('SQL.php');
+
     $result = $MySQL->query("SELECT * FROM maquina");
     $empty = (!$result->num_rows > 0) ? true : false;
 
@@ -18,4 +20,5 @@
 <?php
     endif;
     include('modal.php');
+    $MySQL->close();
 ?>

@@ -4,8 +4,8 @@
     <form class="form-inline" action="search" method="get">
         <div class="form-group">
             <div class="input-group input-group-lg">
-                <input id="search_id" class="form-control mr-sm-2" type="search" placeholder="Procurar por ID" aria-label="Search" name="ID" <?php echo $disabled ?>>
-                <input id="search_nome" class="form-control mr-sm-2" type="search" placeholder="Procurar por nome" aria-label="Search" name="Nome" <?php echo $disabled ?>>
+                <input id="search_id" class="form-control mr-sm-2" type="number" placeholder="Procurar por ID" aria-label="Search" name="ID" <?php echo $disabled ?>>
+                <input id="search_nome" class="form-control mr-sm-2" type="text" placeholder="Procurar por nome" aria-label="Search" name="Nome" <?php echo $disabled ?>>
             </div>
 
             <?php
@@ -51,4 +51,5 @@
             </button>
         </a>
     </form>
+    <script>$('[data-toggle="tooltip"]').tooltip();</script> <!-- FIXME: can't do inner .js -->
 </nav>

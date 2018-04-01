@@ -1,6 +1,8 @@
 <?php
     $tab = 1;
 
+    require('SQL.php');
+
     $result = $MySQL->query("SELECT * FROM status");
     $empty = (!$result->num_rows > 0) ? true : false;
 
@@ -18,4 +20,5 @@
 <?php
     endif;
     include('modal.php');
+    $MySQL->close();
 ?>
