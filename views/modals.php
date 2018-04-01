@@ -7,7 +7,8 @@
     }
 ?>
 
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-hidden="true">
+<!-- ADICIONAR -->
+<div id="addModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <form class="modal-content">
             <div class="modal-header">
@@ -28,7 +29,7 @@
                         <div class="input-group-text">ID</div>
                     </div>
                     <?php $result = $MySQL->query("SELECT MAX(id)+1 as 'id' FROM $objeto[2]")->fetch_object()->id; ?>
-                    <input name="id" type="number" class="form-control" placeholder="<?php echo $result; ?>" disabled>
+                    <input name="id" type="number" class="form-control" value="<?php echo $result; ?>" disabled>
                 </div>
             </div>
             <div class="modal-footer">
@@ -39,7 +40,8 @@
     </div>
 </div>
 
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-hidden="true">
+<!-- EDITAR -->
+<div id="editModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <form class="modal-content">
             <div class="modal-header">
@@ -59,8 +61,8 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text">ID</div>
                     </div>
-                    <?php $result = $MySQL->query("SELECT MAX(id)+1 as 'id' FROM $objeto[2]")->fetch_object()->id; ?>
-                    <input type="number" class="form-control" placeholder="<?php echo $result; ?>" disabled>
+                    <?php $result = $MySQL->query("SELECT MAX(id) as 'id' FROM $objeto[2]")->fetch_object()->id; ?>
+                    <input type="number" class="form-control" value="<?php echo $result; ?>" min="0">
                 </div>
             </div>
             <div class="modal-footer">
@@ -71,7 +73,8 @@
     </div>
 </div>
 
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+<!-- DELETAR -->
+<div id="deleteModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <form class="modal-content">
             <div class="modal-header">
@@ -91,8 +94,8 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text">ID</div>
                     </div>
-                    <?php $result = $MySQL->query("SELECT MAX(id)+1 as 'id' FROM $objeto[2]")->fetch_object()->id; ?>
-                    <input type="number" class="form-control" placeholder="<?php echo $result; ?>" disabled>
+                    <?php $result = $MySQL->query("SELECT MAX(id) as 'id' FROM $objeto[2]")->fetch_object()->id; ?>
+                    <input type="number" class="form-control" value="<?php echo $result; ?>" min="0">
                 </div>
             </div>
             <div class="modal-footer">

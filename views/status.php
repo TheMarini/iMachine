@@ -19,6 +19,6 @@
 
 <?php
     endif;
-    include('modal.php');
+    include('back_DOMs.php');
     $MySQL->close();
 ?>
