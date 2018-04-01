@@ -28,18 +28,12 @@
             </tr>
         </thead>
         <tbody>
+            <?php while($row = $result->fetch_assoc()) : ?>
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
+                <th scope="row"><?php echo $row['id']; ?></th>
+                <td><?php echo $row['nome']; ?></td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-            </tr>
+            <?php endwhile; ?>
         </tbody>
     </table>
 <? endif; ?>
