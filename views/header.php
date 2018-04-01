@@ -1,25 +1,35 @@
 <?php $disabled = ($empty) ? 'disabled' : ''; ?>
 
 <nav class="d-flex justify-content-between align-items-center">
-    <form class="form-inline">
+    <form class="form-inline" action="search" method="get">
         <div class="form-group">
             <div class="input-group input-group-lg">
-                <input class="form-control mr-sm-2" type="search" placeholder="Procurar por ID" aria-label="Search" name="search_id" <?php echo $disabled ?>>
-                <input class="form-control mr-sm-2" type="search" placeholder="Procurar por nome" aria-label="Search" name="search_nome" <?php echo $disabled ?>>
+                <input id="search_id" class="form-control mr-sm-2" type="search" placeholder="Procurar por ID" aria-label="Search" name="ID" <?php echo $disabled ?>>
+                <input id="search_nome" class="form-control mr-sm-2" type="search" placeholder="Procurar por nome" aria-label="Search" name="Nome" <?php echo $disabled ?>>
             </div>
 
-            <?php if ($tab == 0) : ?>
-                <select class="form-control form-control-lg mr-sm-2" id="exampleFormControlSelect1" style="color: dimgray" <?php echo $disabled ?>>
+            <?php
+                if ($tab == 0) :
+                $status = $MySQL->query("SELECT nome FROM status ORDER BY id asc");
+                $status_empty = (!$status->num_rows > 0) ? true : false;
+                $status_disabled = ($status_empty) ? 'disabled' : '';
+            ?>
+                <select id="search_status" class="form-control form-control-lg mr-sm-2" style="color: dimgray" name="Status" <?php echo $disabled; echo $status_disabled; ?>>
                     <option>Procurar por status</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <?php
+                        if (!$status_empty) :
+                            while($row = $status->fetch_assoc()) :
+                    ?>
+                        <option><?php echo $row['nome']; ?></option>
+                    <?php
+                            endwhile;
+                        endif;
+                    ?>
                 </select>
             <?php endif; ?>
         </div>
 
-        <button class="btn btn-lg my-2 my-sm-0" type="submit" <?php echo $disabled ?>>
+        <button id="search_btn" class="btn btn-lg my-2 my-sm-0" type="submit" <?php echo $disabled ?>>
             <img src="/views/assets/img/search.svg" alt="search">
         </button>
     </form>

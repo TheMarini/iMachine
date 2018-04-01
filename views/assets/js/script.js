@@ -36,4 +36,31 @@ $(function () {
 
     //Enable Tooltip
     $('[data-toggle="tooltip"]').tooltip(); //FIXME: isn't cascade load
+
+    //Search
+    $('article').on('click', '#search_btn', function () {
+
+        //Prevent Default
+        event.preventDefault();
+
+        $status = $('#search_status').val() == 'Procurar por status' ? '' : $('#search_status').val();
+
+        //AJAX
+        $.ajax({
+            url: 'search',
+            type: "GET",
+            dataType: 'html',
+            data: ({
+                ID: $('#search_id').val(),
+                Nome: $('#search_nome').val(),
+                Status: $status,
+            }),
+            success: function (data) {
+                $('article table').replaceWith(data);
+            },
+            error: function (event) {
+                console.log(event);
+            }
+        })
+    });
 });
