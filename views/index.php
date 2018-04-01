@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <nav class="nav flex-column" aria-orientation="vertical">
+    <nav class="nav flex-column position-fixed" aria-orientation="vertical">
         <a class="nav-link" href="maquinas" aria-selected="true">Máquinas</a>
         <a class="nav-link" href="status" aria-selected="false">Status</a>
         <a class="nav-link" href="simulacao" aria-selected="false">Simulador</a>
