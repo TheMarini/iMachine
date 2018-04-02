@@ -4,5 +4,5 @@
     use Ramsey\Uuid\Uuid;
     use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 
-    require_once('router.php')
+    require_once('router.php');
 ?>

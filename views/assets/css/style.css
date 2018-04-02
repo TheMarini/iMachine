@@ -15,7 +15,14 @@ a {
 body {
     font-family: 'Roboto', sans-serif;
     background-color: whitesmoke;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex
+}
+
+::-moz-selection {
+    color: whitesmoke;
+    background-color: black
 }
 
 ::selection {
@@ -42,74 +49,31 @@ input[type="submit"] {
 }
 
 
-/*----------CLASSES------------*/
-
-._black-cover {
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-}
-
-._wrapper {
-    max-width: 1100px;
-    /* Espaço total do envolcro */
-    padding: 0 4vw;
-    /* Tamanho da barreira entre o contúdo interno e a borda da janela */
-    margin: auto/* Centralizar wrapper */
-}
-
-._hide {
-    display: none;
-}
-
-._fade {
-    opacity: 0;
-}
-
-._round-border {
-    border-radius: 10px
-}
+/*----------CLASSES GLOBAIS------------*/
 
 ._center-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
     flex-flow: column;
-    /* Distribuição */
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    /* Alinhar horizontal (eixo X) */
-    justify-content: center/* Alinhar vertical (eixo Y) */
-}
-
-._center-X {
-    margin: auto
-}
-
-._btn {
-    text-align: center;
-
-    background-color: transparent;
-    border: 2px solid;
-    font-size: 0.8em;
-    transition: 1s;
-
-    border-radius: 40px;
-    width: 150px;
-    height: 40px;
-
-    text-transform: uppercase;
-
-    font-weight: bold;
-}
-
-._btn:hover {
-    transform: scale(1.04, 1.04);
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
 }
 
 /*----------NAV------------*/
+
 body > nav{
     height: 100vh;
     width: 10vw;
     background-color: cadetblue;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.2);
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
     z-index: 10;
     min-width: 120px;
@@ -128,12 +92,14 @@ body > nav{
 }
 
 body > nav .active{
+    -webkit-transition: 0.5s;
     transition: 0.5s;
     padding-top: 15px;
     padding-bottom: 15px
 }
 
 /*----------MAIN------------*/
+
 main{
     height: 100vh;
     width: 90vw;
@@ -148,6 +114,7 @@ article{
 }
 
 /*----------TABS------------*/
+
 article > nav > form button {
     background-color: #17a2b8
 }
@@ -157,10 +124,12 @@ article > nav > form {
 }
 
 /*----------HEADER------------*/
+
 .controls button{
     margin: 0 5px;
     border-radius: 100%;
     padding: 10px;
+    -webkit-transition: 0.5s;
     transition: 0.5s
 }
 

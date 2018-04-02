@@ -7,6 +7,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <meta name="description" content="2ª Fase - TCS" />
+    <meta name="author" content="Bruno Marini" />
+    <link rel="base" href="https://newprogram.com.br" />
+    <meta name="theme-color" content="#5F9EA0" />
+    <meta name="msapplication-navbutton-color" content="#5F9EA0" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="##5F9EA0" />
+
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">

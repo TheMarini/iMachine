@@ -31,7 +31,6 @@ $(function () {
         })
     });
 
-
     //Search
     $('article').on('click', '#search_btn', function () {
 
