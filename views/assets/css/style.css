@@ -1,0 +1,177 @@
+﻿/*----------NORMATIZAÇÃO------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    list-style: none;
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: whitesmoke;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+::-moz-selection {
+    color: whitesmoke;
+    background-color: black
+}
+
+::selection {
+    color: whitesmoke;
+    background-color: black
+}
+
+input,
+textarea {
+    font-size: 1.3em
+}
+
+input {
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+}
+
+button,
+input[type="submit"] {
+    cursor: pointer
+}
+
+
+/*----------CLASSES GLOBAIS------------*/
+
+._center-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+/*----------NAV------------*/
+
+body > nav{
+    height: 100vh;
+    width: 10vw;
+    background-color: cadetblue;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    z-index: 10;
+    min-width: 120px;
+    padding: 10px 0
+}
+
+.nav-link{
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.nav-link:hover, body > nav .active{
+    background-color: whitesmoke;
+    color: dimgray
+}
+
+body > nav .active{
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    padding-top: 15px;
+    padding-bottom: 15px
+}
+
+/*----------MAIN------------*/
+
+main{
+    height: 100vh;
+    width: 90vw;
+    position: relative;
+    padding:  20px;
+    margin-left: 10vw;
+}
+
+article{
+    height: 100%;
+    width: 100%;
+}
+
+/*----------TABS------------*/
+
+article > nav > form button {
+    background-color: #17a2b8
+}
+
+article > nav > form {
+    margin-bottom: 20px
+}
+
+/*----------HEADER------------*/
+
+.controls button{
+    margin: 0 5px;
+    border-radius: 100%;
+    padding: 10px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s
+}
+
+.controls button img{
+    height: 30px
+}
+
+.controls .add{
+    background-color: lightseagreen!important;
+}
+
+.controls .edit{
+    background-color: darkorange !important;
+}
+
+.controls .delete{
+    background-color: dimgray !important;
+}
+.controls .delete:hover{
+    background-color: indianred !important;
+}
+
+/*----------MODALS------------*/
+.modal-header{
+    color: white
+}
+
+#addModal .modal-header{
+    background-color: lightseagreen !important;
+}
+
+#editModal .modal-header{
+    background-color: darkorange !important;
+}
+
+#deleteModal .modal-header{
+    background-color: indianred !important;
+}
+
+/*----------ALERTS------------*/
+.alert{
+    position: fixed;
+    bottom: 0;
+    z-index: 20
+}
